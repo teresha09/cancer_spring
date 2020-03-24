@@ -29,13 +29,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/profile").authenticated()
                 .antMatchers("/signUp").permitAll()
                 .antMatchers("/confirm/**").permitAll()
-                .antMatchers("/resources/**", "/static/**", "/assets/**", "/css/**", "/fonts/**", "/images/**","/img/**", "/js/**", "/plugins/**", "/vendor/**").permitAll();
+                .antMatchers("/resources/**", "/static/**", "/assets/**", "/css/**", "/fonts/**", "/images/**","/img/**", "/js/**", "/plugins/**", "/vendor/**").permitAll()
+                .antMatchers("/files").permitAll();
 
         http.formLogin()
                 .loginPage("/signIn")
                 .defaultSuccessUrl("/")
                 .failureUrl("/signIn?error")
                 .usernameParameter("email")
+                .permitAll();
+
+        http.logout()
+                .deleteCookies("JSESSIONID")
+                .logoutSuccessUrl("/signIn")
                 .permitAll();
 
     }

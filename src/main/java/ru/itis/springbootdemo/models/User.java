@@ -22,6 +22,7 @@ public class User {
     private String name;
     private String email;
     private String hashPassword;
+    private String photo;
     private LocalDateTime createdAt;
 
     @Enumerated(value = EnumType.STRING)

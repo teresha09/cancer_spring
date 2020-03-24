@@ -38,6 +38,7 @@ public class SignUpServiceImpl implements SignUpService {
                 .state(State.NOT_CONFIRMED)
                 .role(Role.USER)
                 .confirmCode(UUID.randomUUID().toString())
+                .photo(form.getPhoto())
                 .build();
 
         usersRepository.save(user);

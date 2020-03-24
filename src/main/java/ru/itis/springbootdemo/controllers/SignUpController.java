@@ -20,6 +20,7 @@ public class SignUpController {
     @PostMapping("/signUp")
     public String signUp(SignUpDto form) {
         service.signUp(form);
+        System.out.println("-----------------" + form.getPhoto());
         return "redirect:/signUp";
     }
 }
