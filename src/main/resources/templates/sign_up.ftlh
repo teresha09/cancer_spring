@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="form-fild">
                                     <label for="photo">Photo <span class="required">*</span></label>
-                                    <p><input type="file" id="file" name="photo" placeholder="Name..."/></p>
+                                    <p><input type="file" id="file" name="file" placeholder="Name..."/></p>
                                     <input type="button" onclick="sendFile()" class="btn btn-primary mb-2" value="Ok"/>
                                 </div>
                                 <div class="register-submit">

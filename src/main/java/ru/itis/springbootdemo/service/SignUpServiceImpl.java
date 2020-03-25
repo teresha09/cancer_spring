@@ -29,7 +29,7 @@ public class SignUpServiceImpl implements SignUpService {
     private PasswordEncoder passwordEncoder;
 
     @Override
-    public void signUp(SignUpDto form) {
+    public void signUp(SignUpDto form, String fileUrl) {
         User user = User.builder()
                 .email(form.getEmail())
                 .hashPassword(passwordEncoder.encode(form.getPassword()))
@@ -38,7 +38,7 @@ public class SignUpServiceImpl implements SignUpService {
                 .state(State.NOT_CONFIRMED)
                 .role(Role.USER)
                 .confirmCode(UUID.randomUUID().toString())
-                .photo(form.getPhoto())
+                .photo(fileUrl)
                 .build();
 
         usersRepository.save(user);

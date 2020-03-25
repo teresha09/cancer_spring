@@ -15,7 +15,7 @@
                                     <li><a href="/logout">Logout</a></li>
                                     <li class="ml-auto">
                                         <div class="card-footer" style="background: 0px">
-                                            <button type="submit" class="btn" style="background-color: #003"><a href="/addpost">Добавить пост</a></button>
+                                            <button type="submit" class="btn" style="background-color: #003"><a href="/posts/add">Добавить пост</a></button>
                                         </div>
                                     </li>
                                 </ul>
