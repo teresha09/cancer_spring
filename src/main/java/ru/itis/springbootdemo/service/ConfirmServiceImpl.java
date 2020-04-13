@@ -14,6 +14,8 @@ public class ConfirmServiceImpl implements ConfirmService {
     @Autowired
     private UsersRepository usersRepository;
 
+    @Au
+
     @Override
     public boolean confirm(String confirmCode) {
         Optional<User> userOptional = usersRepository.findByConfirmCode(confirmCode);

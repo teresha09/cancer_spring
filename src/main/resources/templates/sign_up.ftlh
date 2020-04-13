@@ -1,3 +1,4 @@
+<#import "spring.ftl" as spring />
 <#include "base.ftlh"/>
 <#macro head>
     <title>Registration</title>
@@ -42,19 +43,19 @@
                         <div class="register-form">
                             <form action="/signUp" method="post" enctype="multipart/form-data">
                                 <div class="form-fild">
-                                    <p><label>Name <span class="required">*</span></label></p>
+                                    <p><label><@spring.message 'profile.page.name'/> <span class="required">*</span></label></p>
                                     <input name="name" type="text">
                                 </div>
                                 <div class="form-fild">
-                                    <p><label>Email address <span class="required">*</span></label></p>
+                                    <p><label><@spring.message 'profile.page.email'/> <span class="required">*</span></label></p>
                                     <input name="email" type="text">
                                 </div>
                                 <div class="form-fild">
-                                    <p><label>Password <span class="required">*</span></label></p>
+                                    <p><label><@spring.message 'sign_in.page.password'/> <span class="required">*</span></label></p>
                                     <input name="password" value="" type="password">
                                 </div>
                                 <div class="form-fild">
-                                    <label for="photo">Photo <span class="required">*</span></label>
+                                    <label for="photo"><@spring.message 'sign_in.page.photo'/> <span class="required">*</span></label>
                                     <p><input type="file" id="file" name="file" placeholder="Name..."/></p>
                                     <input type="button" onclick="sendFile()" class="btn btn-primary mb-2" value="Ok"/>
                                 </div>

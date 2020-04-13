@@ -1,3 +1,4 @@
+<#import "spring.ftl" as spring />
 <#include "base.ftlh"/>
 <#macro head>
     <title>Login</title>
@@ -18,18 +19,18 @@
                         <div class="login-form">
                             <form action="/signIn" method="post">
                                 <div class="form-fild">
-                                    <p><label>Username or email address <span class="required">*</span></label></p>
+                                    <p><label><@spring.message 'sign_in.page.login'/> <span class="required">*</span></label></p>
                                     <input name="email" type="text">
                                 </div>
                                 <div class="form-fild">
-                                    <p><label>Password <span class="required">*</span></label></p>
+                                    <p><label><@spring.message 'sign_in.page.password'/> <span class="required">*</span></label></p>
                                     <input name="password" type="password">
                                 </div>
                                 <div class="login-submit">
-                                    <button type="submit" class="btn">Sign in</button>
+                                    <button type="submit" class="btn"><@spring.message 'sign_in.page.enter'/></button>
                                 </div>
                                 <div class="login-submit">
-                                    <button type="button" class="btn"><a href="/signUp">Register</a></button>
+                                    <button type="button" class="btn"><a href="/signUp"><@spring.message 'sign_in.page.register'/></a></button>
                                 </div>
                             </form>
                         </div>
