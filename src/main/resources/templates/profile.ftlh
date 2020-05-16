@@ -13,7 +13,9 @@
                         <div class="header-menu-area text-center">
                             <nav class="main-menu">
                                 <ul>
-                                    <li><a href="/logout">Logout</a></li>
+                                    <form method="get" action="/logout">
+                                        <button type="submit" name="logout" value="Logout">Logout</button>
+                                    </form>
                                     <li class="ml-auto">
                                         <div class="card-footer" style="background: 0px">
                                             <button type="submit" class="btn" style="background-color: #003"><a href="/posts/add">Добавить пост</a></button>

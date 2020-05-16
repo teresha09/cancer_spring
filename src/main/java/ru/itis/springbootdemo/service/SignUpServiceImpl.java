@@ -1,8 +1,13 @@
 package ru.itis.springbootdemo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
 import ru.itis.springbootdemo.dto.SignUpDto;
 import ru.itis.springbootdemo.models.Role;
 import ru.itis.springbootdemo.models.State;
@@ -44,6 +49,14 @@ public class SignUpServiceImpl implements SignUpService {
         usersRepository.save(user);
 
         executorService.submit(() ->
-                emailService.sendMail("Confirm", user.getConfirmCode(), user.getEmail()));
+               emailService.sendMail("Confirm", user.getConfirmCode(), user.getEmail()));
+//        RestTemplate restTemplate = new RestTemplate();
+//        HttpHeaders headers = new HttpHeaders();
+//        headers.setBasicAuth("goga0092@gmail.com", "80cSQfUHiSJcFtO4OBVVVoZJWlif");
+//        String resourceUrl =
+//                "https://@gate.smsaero.ru/v2/sms/send?number=79613376432&text=" + user.getConfirmCode() + "&sign=SMS Aero&channel=DIRECT";
+//        HttpEntity<String> entity = new HttpEntity<>(headers);
+//        ResponseEntity<String> response = restTemplate.exchange(resourceUrl, HttpMethod.GET, entity, String.class);
+//        System.out.println(response.getBody());
     }
 }

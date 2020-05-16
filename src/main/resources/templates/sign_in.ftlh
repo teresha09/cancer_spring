@@ -29,6 +29,8 @@
                                 <div class="login-submit">
                                     <button type="submit" class="btn"><@spring.message 'sign_in.page.enter'/></button>
                                 </div>
+                                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+                                <div class="check"><p><input type="checkbox" name="remember-me"> Remember me</p></div>
                                 <div class="login-submit">
                                     <button type="button" class="btn"><a href="/signUp"><@spring.message 'sign_in.page.register'/></a></button>
                                 </div>
